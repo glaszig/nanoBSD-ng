@@ -34,7 +34,7 @@ install_kernel ( ) (
 		__MAKE_CONF=${NANO_MAKE_CONF_INSTALL} \
 		${kernconfdir:+"KERNCONFDIR="}${kernconfdir} \
 		KERNCONF=${kernconf} \
-		MODULES_OVERRIDE="${NANO_MODULES}"
+        # MODULES_OVERRIDE="${NANO_MODULES}"
 	) > ${NANO_OBJ}/_.ik 2>&1
 )
 
