@@ -4,7 +4,27 @@ This is a better toolset for creating nanobsd images.
 Based on the original nanobsd script (which is being distributed with the FreeBSD sources) by [Paul-Henning Kamp](http://people.freebsd.org/~phk/), forked from [Tom Judge's work](http://www.tomjudge.com/index.php/FreeBSD/NanoBSD_NG#How_to_get_it).
 
 ## Motivation
-I could not reach Tom for the purpose of reporting some bugs, so i decided to fork his work and put it up here.
+I could not reach Tom for the purpose of reporting some bugs, so i decided to fork his work and put it up here.  
+Personally, i'm using this tool set to build my own nanoBSD-based distribution for my HP N36L micro server as i got sick of the route the FreeNAS development is taking -- and the legacy versions are still missing support for Netatalk 2.2 which is needed for Time Machine on Mac OS Lion.  
+
+## Development
+Development will be happening inside the `dev` branch.
+
+## Usage
+I'll just dump the output of `./nanobsd.sh -h`.
+
+    Usage: ./nanobsd.sh [-bikqvw] [-a target_arch] -t target_name
+    	-a	target cpu architecture (amd64/arm/i386/sparc64)
+    	-b	suppress builds (both kernel and world)
+    	-i	suppress disk image build
+    	-k	suppress buildkernel
+    	-n	add -DNO_CLEAN to buildworld, buildkernel, etc
+    	-q	make output quiter
+    	-v	make output more verbose
+    	-w	suppress buildworld
+    	-t	nanobsd target to build
+
+> For further information on nanoBSD, please consult the [FreeBSD manual](http://www.freebsd.org/doc/en/articles/nanobsd/article.html).
 
 ## License
 FreeBSD License
