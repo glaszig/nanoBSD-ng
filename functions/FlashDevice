@@ -208,6 +208,40 @@ FlashDevice () {
 			;;
 		esac
 		;;
+		
+    generic)
+       case $a2 in
+       *.*)    # Catch unsupported 1.5g case, since expr can't
+           # cope with floats.
+           echo "Unsupported generic size $a2"
+           exit 2
+           ;;
+       *m)
+           NANO_HEADS=16
+           NANO_SECTS=63
+           NANO_MEDIASIZE=`expr -e ${a2%m} \* 1000000 / 512`
+           ;;
+       *g)
+           NANO_HEADS=16
+           NANO_SECTS=63
+           NANO_MEDIASIZE=`expr -e ${a2%g} \* 1000000000 / 512`
+           ;;
+       *mi)
+           NANO_HEADS=16
+           NANO_SECTS=63
+           NANO_MEDIASIZE=`expr -e ${a2%mi} \* 1024 \* 1024 / 512`
+           ;;
+       *gi)
+           NANO_HEADS=16
+           NANO_SECTS=63
+           NANO_MEDIASIZE=`expr -e ${a2%gi} \* 1024 \* 1024 \* 1024 / 512`
+           ;;
+       *)
+           echo "Unsupported generic size $a2"
+           exit 2
+           ;;
+       esac
+       ;;
 	*)
 		echo "Unknown Flash manufacturer"
 		exit 2
