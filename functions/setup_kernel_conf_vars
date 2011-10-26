@@ -30,4 +30,5 @@ setup_kernel_conf_vars ( ) {
 	else
 		kernconf=${NANO_KERNEL}
 	fi
+    pprint 4 "kernconf file: ${kernconfdir}/${kernconf}"
 }
