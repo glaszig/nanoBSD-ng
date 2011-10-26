@@ -1,0 +1,5 @@
+targets/*
+!targets/alix
+!targets/default
+!targets/net5501
+!targets/rescue
