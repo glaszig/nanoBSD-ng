@@ -23,9 +23,8 @@
 # SUCH DAMAGE.
 build_kernel ( ) (
 	pprint 2 "build kernel ($NANO_KERNEL)"
-	pprint 3 "log: ${MAKEOBJDIRPREFIX}/_.bk"
-	
 	setup_kernel_conf_vars
+	pprint 3 "log: ${MAKEOBJDIRPREFIX}/_.bk"
 
 	(cd ${NANO_SRC};
 	# unset these just in case to avoid compiler complaints
